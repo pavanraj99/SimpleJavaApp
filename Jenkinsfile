@@ -9,10 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/pavanraj99/SimpleJavaApp.git'
-                // To run Maven on a Windows agent, use
-                bat "mvn clean package"
+                echo "working"
             }
         }
     }
