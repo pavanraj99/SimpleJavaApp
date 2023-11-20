@@ -11,8 +11,8 @@ pipeline {
             steps {
                 // Build the Maven project and package it into a JAR
                 script {
-                    
-                    sh "${mavenHome}/bin/mvn clean package"
+                    def mvnHome = tool 'jenkins-maven'
+                    sh "${mvnHome}/bin/mvn clean package"
                 }
             }
         }
