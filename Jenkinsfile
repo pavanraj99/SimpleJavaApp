@@ -9,18 +9,12 @@ pipeline {
 	stages {
 		stage('Build'){
 			steps {
-				sh 'mvn clean install -DskipTests'
+				script {
+                 
+                    sh "D:/apache-maven-3.9.4/bin/mvn clean install"
+                }
 			}
 		}
-		stage('Test'){
-			steps{
-				sh 'mvn test'
-			}
-		}
-		stage('Deploy') {
-			steps {
-			    sh 'mvn jar:jar deploy:deploy'
-			}
-		}
+		
 	}
 }
