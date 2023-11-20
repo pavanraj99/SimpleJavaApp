@@ -7,14 +7,15 @@ pipeline {
 		jdk 'JDK-11'
 	}
 	stages {
-		stage('Build'){
-			steps {
-				script {
-                 
-                    sh "D:/apache-maven-3.9.4/bin/mvn clean install"
+		stage('Build') {
+            steps {
+                // Build the Maven project and package it into a JAR
+                script {
+                    
+                    sh "${mavenHome}/bin/mvn clean package"
                 }
-			}
-		}
+            }
+        }
 		
 	}
 }
